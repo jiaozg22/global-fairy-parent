@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jzg.fairy</groupId>
+    <artifactId>global-fairy-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>org.global.fairy.doc.plugin</groupId>
+  <artifactId>global-fairy-doc-plugin</artifactId>
+  <version>0.0.1</version>
+  <packaging>maven-plugin</packaging>
+  <name>global-fairy-doc-plugin</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <description>global-fairy-doc-plugin</description>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-plugin-plugin</artifactId>
+      <version>3.0</version>
+    </dependency>
+    <dependency>
+		<groupId>org.apache.maven</groupId>
+		<artifactId>maven-plugin-api</artifactId>
+		<version>2.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.maven.plugin-tools</groupId>
+		<artifactId>maven-plugin-annotations</artifactId>
+		<version>3.2</version>
+		<scope>provided</scope>
+	</dependency>
+  </dependencies>
+ 
+</project>
