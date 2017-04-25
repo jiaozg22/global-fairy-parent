@@ -21,8 +21,7 @@ public class HelloWorld {
 	@RequestMapping(value = "/sayHello" , method= RequestMethod.GET)
 	@ResponseBody()
 	public String sayHello(){
-		logger.info("dddd");
-		System.out.println("PRINT A MARK IN THE METHOD");
+		logger.info("PRINT A MARK IN THE METHOD");
 		userApi.sayHello();
 		return "HelloWorld";
 	}

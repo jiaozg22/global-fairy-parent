@@ -10,6 +10,9 @@
         <dependent-module archiveName="global-fairy-service-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/global-fairy-service/global-fairy-service">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="global-fairy-modules-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/global-fairy-modules/global-fairy-modules">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="global-fairy-web"/>
         <property name="java-output-path" value="/global-fairy-web Maven Webapp/target/classes"/>
     </wb-module>

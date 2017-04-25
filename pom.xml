@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.jzg.fairy</groupId>
@@ -193,6 +194,14 @@
 			<version>2.3.1.RELEASE</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/antlr/antlr -->
+		<dependency>
+			<groupId>antlr</groupId>
+			<artifactId>antlr</artifactId>
+			<version>2.7.7</version>
+		</dependency>
+		
+
 		<!-- json -->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
@@ -293,12 +302,12 @@
 		<module>global-fairy-web Maven Webapp</module>
 		<module>global-fairy-doc</module>
 		<module>global-fairy-doc-plugin</module>
-		<!-- <module>global.fairy.api</module>
-		<module>global.fairy.provider</module>
-		<module>global.fairy.consumer</module> -->
+		<!-- <module>global.fairy.api</module> <module>global.fairy.provider</module> 
+			<module>global.fairy.consumer</module> -->
 		<module>global-fairy-dao</module>
 		<module>global-fairy-service</module>
 		<module>global-fairy-api</module>
-    <module>global-fairy-service-impl</module>
-  </modules>
+		<module>global-fairy-service-impl</module>
+		<module>global-fairy-modules</module>
+	</modules>
 </project>

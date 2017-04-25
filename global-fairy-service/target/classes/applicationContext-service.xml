@@ -11,21 +11,5 @@
 	<context:annotation-config />
 	<context:component-scan base-package="org.global.fairy.service"></context:component-scan>
 
-	<!-- 导入属性配置文件 -->
-	<context:property-placeholder location="classpath:mysql.properties" />
-
-	<!-- 配置数据库路径 -->
-	<bean id="dataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="${db.driverClassName}" />
-		<property name="url" value="${db.url}" />
-	</bean>
-
-	<!-- 配置事务管理 -->
-	<bean id="transactionManager"
-		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource"></property>
-	</bean>
-
-
+	
 </beans>

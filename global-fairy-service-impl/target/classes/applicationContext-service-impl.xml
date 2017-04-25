@@ -10,4 +10,8 @@
        <!-- 启用spring mvc 注解 -->
 	<context:annotation-config />
 	<context:component-scan base-package="org.global.fairy.service.impl"></context:component-scan>
+
+    <import resource="classpath*:applicationCoantext-mybatis.xml"/>
+    
+
 </beans>

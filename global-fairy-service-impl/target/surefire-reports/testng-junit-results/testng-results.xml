@@ -6,7 +6,7 @@
     </groups>
     <test name="Command line test">
       <class name="org.global.fairy.service.impl.AppTest">
-        <test-method status="PASS" signature="testApp()" name="testApp" duration-ms="6" started-at="2017-04-12T12:16:44Z" finished-at="2017-04-12T12:16:44Z">
+        <test-method status="PASS" signature="testApp()" name="testApp" duration-ms="5" started-at="2017-04-22T23:27:52Z" finished-at="2017-04-22T23:27:52Z">
         </test-method>
       </class>
     </test>
