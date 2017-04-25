@@ -4,8 +4,8 @@ import javax.annotation.Resource;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.global.fairy.modules.dao.User;
 import org.global.fairy.service.IUserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,6 +17,10 @@ public class UserApi {
 
 	public void sayHello() {
 		logger.info("into api");
-		userService.sayHello();
+		User user = new User();
+		
+		user.setId(10000);
+		user.setName("jiao_zg");
+		userService.sayHello(user);
 	}
 }
