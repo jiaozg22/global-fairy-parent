@@ -1,1 +1,2 @@
 org\global\fairy\dao\AppTest.class
+org\global\fairy\dao\SqlSessionFactoryUtil.class
