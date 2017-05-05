@@ -200,7 +200,7 @@
 			<artifactId>antlr</artifactId>
 			<version>2.7.7</version>
 		</dependency>
-		
+
 
 		<!-- json -->
 		<dependency>
@@ -302,12 +302,16 @@
 		<module>global-fairy-web Maven Webapp</module>
 		<module>global-fairy-doc</module>
 		<module>global-fairy-doc-plugin</module>
-		<!-- <module>global.fairy.api</module> <module>global.fairy.provider</module> 
-			<module>global.fairy.consumer</module> -->
+		<!-- 
+		<module>global.fairy.api</module> 
+		<module>global.fairy.provider</module> 
+		<module>global.fairy.consumer</module>
+		-->
 		<module>global-fairy-dao</module>
 		<module>global-fairy-service</module>
 		<module>global-fairy-api</module>
 		<module>global-fairy-service-impl</module>
 		<module>global-fairy-modules</module>
+		<module>global-fairy-redis</module>
 	</modules>
 </project>

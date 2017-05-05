@@ -74,28 +74,5 @@
 		<constructor-arg index="0" ref="sqlSessionFactory"/>
 	</bean>
 
-	<!-- 配置事务管理器 -->
-	<bean id="transactionManager"
-		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource" />
-	</bean>
 
-
-	<!-- 注解方式配置事物 -->
-	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
-
-
-	<!-- 拦截器方式配置事物 -->
-	<tx:advice id="transactionAdvice" transaction-manager="transactionManager">
-		<tx:attributes>
-			<tx:method name="insert*" propagation="REQUIRED" />
-			<tx:method name="update*" propagation="REQUIRED" />
-			<tx:method name="delete*" propagation="REQUIRED" />
-			<tx:method name="get*" propagation="SUPPORTS" read-only="true" />
-			<tx:method name="find*" propagation="SUPPORTS" read-only="true" />
-			<tx:method name="select*" propagation="SUPPORTS" read-only="true" />
-
-
-		</tx:attributes>
-	</tx:advice>
 </beans>

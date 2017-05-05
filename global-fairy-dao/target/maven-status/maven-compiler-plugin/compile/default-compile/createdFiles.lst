@@ -1,2 +1,3 @@
 org\global\fairy\dao\UserMapper.class
 org\global\fairy\dao\App.class
+org\global\fairy\dao\PagingPlugin.class
