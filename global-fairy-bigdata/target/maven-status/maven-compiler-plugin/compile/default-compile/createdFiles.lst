@@ -1,0 +1,12 @@
+org\global\fairy\bigdata\hadoop\mapreduce\MyWordCount.class
+org\global\fairy\bigdata\type\TextPair.class
+org\global\fairy\bigdata\App.class
+org\global\fairy\bigdata\FileUtil$CygPathCommand.class
+org\global\fairy\bigdata\hadoop\mapreduce\DataTotalMapReduce$DataTotalMapper.class
+org\global\fairy\bigdata\hadoop\mapreduce\MyWordCount$MyMapper.class
+org\global\fairy\bigdata\FileUtil.class
+org\global\fairy\bigdata\hadoop\mapreduce\DataTotalMapReduce.class
+org\global\fairy\bigdata\type\DataWritable.class
+org\global\fairy\bigdata\hadoop\mapreduce\DataTotalMapReduce$DataTotalReducer.class
+org\global\fairy\bigdata\hadoop\mapreduce\MyWordCount$MyReduce.class
+org\global\fairy\bigdata\type\TextPair$Comparator.class
