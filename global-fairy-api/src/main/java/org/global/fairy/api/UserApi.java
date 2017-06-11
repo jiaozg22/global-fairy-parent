@@ -23,4 +23,6 @@ public class UserApi {
 		user.setName("jiao_zg");
 		userService.sayHello(user);
 	}
+
+	
 }
