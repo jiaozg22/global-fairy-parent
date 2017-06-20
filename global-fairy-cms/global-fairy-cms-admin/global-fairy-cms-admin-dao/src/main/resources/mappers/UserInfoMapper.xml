@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.global.fairy.cms.admin.dao.UserInfoMapper">
+
+	<sql id="user">
+		id,
+		username
+	</sql>
+	<!-- 查询语句 -->
+	<select id="getUserInfo" resultType="userInfoBean">
+		select
+		<include refid="user" />
+		from user
+	</select>
+
+	<!-- 插入语句 -->
+	<insert id="insertUserInfo" parameterType="userInfoBean" useGeneratedKeys="true"
+		keyProperty="id">
+		<selectKey keyProperty="id" resultType="int" order="BEFORE">
+			select if(max(id) is null ,1,max(id) + 2) as newId from user_info
+		</selectKey>
+		insert into user_info(username) values(#{username})
+	</insert>
+
+	<!-- 删除语句 -->
+	<delete id="deleteUserInfo" parameterType="long">
+		delete from user_info where id
+		= #{id}
+	</delete>
+</mapper>

@@ -1,33 +1,34 @@
-<?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.global.fairy.cms</groupId>
-    <artifactId>global-fairy-cms</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <groupId>org.global.fairy.cms.admin</groupId>
-  <artifactId>global-fairy-cms-admin</artifactId>
-  <name>global-fairy-cms-admin</name>
-  <packaging>pom</packaging>
-  <url>http://maven.apache.org</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <modules>
-  	<module>global-fairy-cms-admin-service</module>
-  	<module>global-fairy-cms-admin-dao</module>
-  	<module>global-fairy-cms-admin-service-impl</module>
-  	<module>global-fairy-cms-admin-api</module>
-  	<module>global-fairy-cms-admin-web</module>
-  </modules>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.global.fairy.cms</groupId>
+		<artifactId>global-fairy-cms</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>org.global.fairy.cms.admin</groupId>
+	<artifactId>global-fairy-cms-admin</artifactId>
+	<name>global-fairy-cms-admin</name>
+	<packaging>pom</packaging>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<modules>
+		<module>global-fairy-cms-admin-web Maven Webapp</module>
+		<module>global-fairy-cms-admin-api</module>
+		<module>global-fairy-cms-admin-service</module>
+		<module>global-fairy-cms-admin-service-impl</module>
+		<module>global-fairy-cms-admin-dao</module>
+		
+	</modules>
 </project>

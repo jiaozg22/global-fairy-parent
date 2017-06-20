@@ -1,4 +1,4 @@
-package org.global.fairy.cms.admin.service.impl;
+package org.global.fairy.cms.admin.modules;
 
 /**
  * Hello world!
