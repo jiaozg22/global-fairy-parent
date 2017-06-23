@@ -19,9 +19,9 @@ public class RunWindowsZKService {
 	public static void stopZKService() {
 		int i = ps.exitValue();
 		if (i == 0) {
-			System.out.println("执行完成.");
+			System.out.println("ZKService stop 执行完成.");
 		} else {
-			System.out.println("执行失败.");
+			System.out.println("ZKService stop 执行失败.");
 		}
 		ps.destroy();
 		ps = null;

@@ -6,6 +6,7 @@ import org.global.fairy.cms.admin.api.params.RegistorApiParams;
 import org.global.fairy.cms.admin.api.params.converters.RegistorApiParams2RegistorServiceParamsConverter;
 import org.global.fairy.cms.admin.service.UserService;
 import org.global.fairy.cms.admin.service.params.RegistorServiceParams;
+import org.global.fairy.core.Pager;
 import org.springframework.stereotype.Component;
 
 @Component("userApi")
@@ -17,6 +18,10 @@ public class UserApi {
 		RegistorServiceParams registorServiceParams = RegistorApiParams2RegistorServiceParamsConverter
 				.newInstance().convert(registorApiParams);
 		return userService.register(registorServiceParams);
+	}
+
+	public String list(Pager pagerForm) {		
+		return userService.list(pagerForm) ;
 	}
 
 }

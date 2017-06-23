@@ -8,12 +8,15 @@ import org.global.fairy.cms.admin.api.UserApi;
 import org.global.fairy.cms.admin.api.params.RegistorApiParams;
 import org.global.fairy.cms.admin.forms.RegistorForm;
 import org.global.fairy.cms.admin.forms.converters.RegistorForm2RegistorApiParams;
+import org.global.fairy.core.Pager;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.alibaba.fastjson.JSONObject;
 
 @Controller
 @RequestMapping(value = "/cms")
@@ -23,6 +26,12 @@ public class UserController {
 	@Resource
 	private UserApi userApi;
 
+	/**
+	 * 注册接口
+	 * 
+	 * @param registorForm
+	 * @return
+	 */
 	@RequestMapping(value = "/registor", method = RequestMethod.POST)
 	@ResponseBody()
 	public String registor(@RequestBody RegistorForm registorForm) {
@@ -33,6 +42,28 @@ public class UserController {
 				.getInstance().convert(registorForm);
 		userApi.register(registorApiParams);
 		logger.info("注册成功!");
-		return "registor";
+		RegistorApiParams registorApiResult = new RegistorApiParams();
+		registorApiResult.setUsername("jiao");
+		registorApiResult.setPassword("123456");
+		String json = "/\"total/\":2,/\"rows/\""
+				+ "{/\"username/\":/\"jiao_zg/\",/\"password/\":/\"123456/\"},"
+				+ "{/\"username/\":/\"jiao_zg/\",/\"password/\":/\"123456/\"}";
+		return JSONObject.toJSONString(registorApiResult);
+	}
+	
+	/**
+	 * 查询接口
+	 * 
+	 * @param registorForm
+	 * @return
+	 */
+	@RequestMapping(value = "/userinfo/list", method = RequestMethod.GET)
+	@ResponseBody()
+	public String userList(Pager pagerForm) {
+		System.out.println(pagerForm.toString());
+		logger.info(  "用户列表...");
+		
+		String result = userApi.list(pagerForm);
+		return result;
 	}
 }

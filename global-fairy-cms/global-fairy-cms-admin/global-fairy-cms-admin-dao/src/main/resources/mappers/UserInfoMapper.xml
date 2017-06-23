@@ -4,15 +4,24 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.global.fairy.cms.admin.dao.UserInfoMapper">
 
-	<sql id="user">
+	<sql id="user_info">
 		id,
-		username
+		username,
+		password
 	</sql>
+	
+	<resultMap id="userInfoResultMap" type="UserInfoBean">
+        <id column="id" property="id" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+    </resultMap>
+	
+	
 	<!-- 查询语句 -->
 	<select id="getUserInfo" resultType="userInfoBean">
 		select
-		<include refid="user" />
-		from user
+		<include refid="user_info" />
+		from user_info
 	</select>
 
 	<!-- 插入语句 -->
@@ -29,4 +38,10 @@
 		delete from user_info where id
 		= #{id}
 	</delete>
+	
+	<!-- 用户列表 -->
+	<select id="list" resultMap="userInfoResultMap" parameterType="UserInfoBean" >
+		select <include refid="user_info" />
+		  from user_info
+	</select>
 </mapper>
