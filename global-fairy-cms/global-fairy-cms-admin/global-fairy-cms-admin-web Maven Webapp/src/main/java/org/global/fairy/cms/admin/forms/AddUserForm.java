@@ -2,12 +2,11 @@ package org.global.fairy.cms.admin.forms;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.databind.annotation.JsonTypeIdResolver;
-
-public class RegistorForm implements Serializable{
+public class AddUserForm implements Serializable{
+	
 	public int id;
 
-//	public String codeId;
+	public String codeId;
 
 	public String username;
 
@@ -29,13 +28,13 @@ public class RegistorForm implements Serializable{
 		this.id = id;
 	}
 
-//	public String getCodeId() {
-//		return codeId;
-//	}
-//
-//	public void setCodeId(String codeId) {
-//		this.codeId = codeId;
-//	}
+	public String getCodeId() {
+		return codeId;
+	}
+
+	public void setCodeId(String codeId) {
+		this.codeId = codeId;
+	}
 
 	public String getUsername() {
 		return username;
@@ -85,5 +84,5 @@ public class RegistorForm implements Serializable{
 		this.logcounts = logcounts;
 	}
 	
-	
+
 }

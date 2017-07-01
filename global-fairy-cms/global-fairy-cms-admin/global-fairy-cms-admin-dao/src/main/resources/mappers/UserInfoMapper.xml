@@ -40,7 +40,7 @@
 	</delete>
 	
 	<!-- 用户列表 -->
-	<select id="list" resultMap="userInfoResultMap" parameterType="UserInfoBean" >
+	<select id="list" resultMap="userInfoResultMap" parameterType="pageParams" >
 		select <include refid="user_info" />
 		  from user_info
 	</select>

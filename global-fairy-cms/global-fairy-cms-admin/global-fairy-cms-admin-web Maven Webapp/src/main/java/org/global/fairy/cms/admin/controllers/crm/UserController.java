@@ -8,18 +8,19 @@ import org.global.fairy.cms.admin.api.UserApi;
 import org.global.fairy.cms.admin.api.params.RegistorApiParams;
 import org.global.fairy.cms.admin.forms.RegistorForm;
 import org.global.fairy.cms.admin.forms.converters.RegistorForm2RegistorApiParams;
+import org.global.fairy.core.PageParams;
 import org.global.fairy.core.Pager;
+import org.global.fairy.core.utils.ResultJsonUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
 
 @Controller
-@RequestMapping(value = "/cms")
+@RequestMapping(value = "/crm")
 public class UserController {
 	private static final Logger logger = LogManager.getLogger();
 
@@ -52,14 +53,32 @@ public class UserController {
 	}
 	
 	/**
-	 * 查询接口
+	 * 新增用戶
+	 * 
+	 * @param registorForm
+	 * @return
+	 */
+	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
+	@ResponseBody()
+	public String addUser(@RequestBody RegistorForm registorForm) {
+		logger.info(  "新增用户...");
+		RegistorApiParams registorApiParams = RegistorForm2RegistorApiParams
+				.getInstance().convert(registorForm);
+		String result = ResultJsonUtil.toJson(userApi.addUser(registorApiParams));
+		
+		logger.info("新增用户成功!");
+		return result;
+	}
+	
+	/**
+	 * 列表查询接口
 	 * 
 	 * @param registorForm
 	 * @return
 	 */
 	@RequestMapping(value = "/userinfo/list", method = RequestMethod.GET)
 	@ResponseBody()
-	public String userList(Pager pagerForm) {
+	public String userList(PageParams pagerForm) {
 		System.out.println(pagerForm.toString());
 		logger.info(  "用户列表...");
 		

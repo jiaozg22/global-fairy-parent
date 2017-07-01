@@ -1,6 +1,7 @@
 package org.global.fairy.cms.admin.service;
 
 import org.global.fairy.cms.admin.service.params.RegistorServiceParams;
+import org.global.fairy.core.PageParams;
 import org.global.fairy.core.Pager;
 
 public interface UserService {
@@ -23,8 +24,16 @@ public interface UserService {
 	/**
 	 * 用户列表
 	 * 
-	 * @param pagerForm
+	 * @param PageParams
 	 * @return
 	 */
-	String list(Pager pagerForm);
+	String list(PageParams pagerForm);
+
+	/**
+	 * 添加用戶
+	 * 
+	 * @param registorServiceParams
+	 * @return
+	 */
+	int addUser(RegistorServiceParams registorServiceParams);
 }

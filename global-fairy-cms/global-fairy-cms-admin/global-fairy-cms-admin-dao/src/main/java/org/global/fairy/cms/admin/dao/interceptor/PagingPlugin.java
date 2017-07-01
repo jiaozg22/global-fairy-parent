@@ -1,4 +1,4 @@
-package org.global.fairy.dao;
+package org.global.fairy.cms.admin.dao.interceptor;
 
 import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
@@ -23,8 +23,14 @@ import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.reflection.SystemMetaObject;
 import org.apache.ibatis.scripting.defaults.DefaultParameterHandler;
 import org.apache.ibatis.session.Configuration;
-import org.global.fairy.modules.PageParams;
+import org.global.fairy.core.PageParams;
 
+/**
+ * 分页插件，默认为第一页，每页十行。数据库暂时只支持mysql
+ * 
+ * @author jiao
+ * 
+ */
 @Intercepts({ @Signature(type = StatementHandler.class, method = "prepare", args = { Connection.class }) })
 public class PagingPlugin implements Interceptor {
 	private Integer defaultPage;// 当前页码数
@@ -103,7 +109,8 @@ public class PagingPlugin implements Interceptor {
 		String sql = (String) metaStatementHandler
 				.getValue("delegate.boundSql.sql");
 		// 修改SQL,这里使用的是MySql，如果是其他数据库则需要修改
-		String newSql = "select * from (" + sql + ")$_paging_table limit ?,?";
+		String newSql = "select * from (" + sql
+				+ ") as $_paging_table limit ?,?";
 		metaStatementHandler.setValue("delegate.boundSql.sql", newSql);
 		// 相当于调用StatementHandler的prepare方法，预编译了当前SQL并设置原有的参数，但是少了两个分页参数，它返回的是一个PreparedStatement对象
 		PreparedStatement ps = (PreparedStatement) invocation.proceed();
@@ -173,7 +180,9 @@ public class PagingPlugin implements Interceptor {
 		String sql = (String) metaStatementHandler
 				.getValue("delegate.boundSql.sql");
 		// 改写为统计总数的SQL,这里是MySql数据库，如果是其他数据库，需要按照数据库的SQL规范写
-		String countSql = "select count(*) as total from (" + sql + "$_paging)";
+		System.out.println(sql);
+		String countSql = "select count(*) as total from (" + sql
+				+ ") as $_paging";
 		// 获取拦截方法参数，我们知道是Connection对象
 		Connection connection = (Connection) invocation.getArgs()[0];
 		PreparedStatement ps = null;
@@ -216,7 +225,6 @@ public class PagingPlugin implements Interceptor {
 	private boolean checkSelect(String sql) {
 		String trimSql = sql.trim();
 		int idx = trimSql.toLowerCase().indexOf("select");
-
 		return idx == 0;
 	}
 
@@ -281,11 +289,11 @@ public class PagingPlugin implements Interceptor {
 		String strDefaultPage = properties.getProperty("default.page", "1");
 
 		String strDefaultPageSize = properties.getProperty("default.pageSize",
-				"50");
+				"10");
 		String strDefaultUseFlag = properties.getProperty("default.useFlag",
-				"false");
+				"true");
 		String strDefaultCheckFlag = properties.getProperty(
-				"default.checkFlag", "false");
+				"default.checkFlag", "true");
 
 		this.defaultPage = Integer.parseInt(strDefaultPage);
 		this.defaultPageSize = Integer.parseInt(strDefaultPageSize);
