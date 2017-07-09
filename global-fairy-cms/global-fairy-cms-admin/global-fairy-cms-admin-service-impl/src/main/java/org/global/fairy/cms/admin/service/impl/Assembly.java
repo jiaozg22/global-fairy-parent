@@ -23,7 +23,7 @@ public class Assembly {
 	
 	private static void startSpringContext(){
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-				new String[] { "global-fairy-dubbo-provider.xml","applicationContext-service-impl.xml","applicationContext-mybatis.xml" });
+				new String[] { "global-fairy-dubbo-provider.xml","applicationContext-service-impl.xml","applicationContext-mybatis-cms.xml" });
 		
 		context.start();
 

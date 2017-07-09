@@ -1,1 +1,8 @@
+org\global\fairy\core\PageParams.class
+org\global\fairy\core\utils\ResultJsonUtil.class
+org\global\fairy\core\RunWindowsZKService.class
+org\global\fairy\core\utils\CallExe.class
+org\global\fairy\core\EnvGet.class
 org\global\fairy\core\App.class
+org\global\fairy\core\utils\InvokeBat.class
+org\global\fairy\core\Pager.class

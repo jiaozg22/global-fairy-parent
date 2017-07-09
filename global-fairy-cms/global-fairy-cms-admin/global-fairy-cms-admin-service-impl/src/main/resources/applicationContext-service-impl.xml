@@ -13,17 +13,17 @@
 	<context:component-scan base-package="org.global.fairy.cms.admin.service.impl"/>
 
 	<!-- 配置事务管理器 -->
-	<bean id="transactionManager"
+	<bean id="cmsTransactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource" />
+		<property name="dataSource" ref="cmsDataSource" />
 	</bean>
 
 	<!-- 事务隔离级别 -->
 	<!-- 注解方式配置事物 ,事务隔离级别通过注解实现 -->
-	<tx:annotation-driven transaction-manager="transactionManager" />
+	<tx:annotation-driven transaction-manager="cmsTransactionManager" />
 
 	<!-- 拦截器方式配置事物 -->
-	<tx:advice id="transactionAdvice" transaction-manager="transactionManager">
+	<tx:advice id="cmsTransactionAdvice" transaction-manager="cmsTransactionManager">
 		<tx:attributes>
 			<tx:method name="insert*" propagation="REQUIRED" />
 			<tx:method name="update*" propagation="REQUIRED" />
@@ -36,9 +36,9 @@
 
 	<aop:config>
 		<!--配置事务切点 -->
-		<aop:pointcut id="services"
+		<aop:pointcut id="cms_services"
 			expression="execution(* org.global.fairy.cms.admin.service.*.*(..))" />
-		<aop:advisor pointcut-ref="services" advice-ref="transactionAdvice" />
+		<aop:advisor pointcut-ref="cms_services" advice-ref="cmsTransactionAdvice" />
 	</aop:config>
 
 </beans>

@@ -8,7 +8,12 @@ import java.io.Serializable;
 public class UserInfoBean implements Serializable{
 	
 	
-//	@Id
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	//	@Id
 //	@GeneratedValue(generator = "uuid")
 //	@GenericGenerator(name = "uuid", strategy = "uuid")
 	private int id;
