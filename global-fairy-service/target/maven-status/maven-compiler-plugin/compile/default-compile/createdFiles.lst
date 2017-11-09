@@ -1,1 +1,3 @@
+org\global\fairy\service\results\CommonResult.class
 org\global\fairy\service\IUserService.class
+org\global\fairy\service\ICommonService.class

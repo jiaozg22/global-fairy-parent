@@ -8,7 +8,8 @@ public class RunWindowsZKService {
 	static Process ps = null;
 	
 	public static void runZKService() {
-		String ZOOKEEPER_HOME = EnvGet.getEnvByKey("ZOOKEEPER_HOME");
+		String ZOOKEEPER_HOME_VALUE = "ZOOKEEPER_HOME";
+		String ZOOKEEPER_HOME = EnvGet.getEnvByKey(ZOOKEEPER_HOME_VALUE);
 		String path = "cmd.exe /c start " + ZOOKEEPER_HOME
 				+ "/bin/zkServer.cmd";
 		// String path =

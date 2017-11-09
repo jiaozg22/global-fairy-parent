@@ -332,5 +332,6 @@
 		<module>global-fairy-activemq</module>
 		<module>global-fairy-cms</module>
     <module>global-fairy-netty</module>
+    <module>global-fairy-security</module>
   </modules>
 </project>

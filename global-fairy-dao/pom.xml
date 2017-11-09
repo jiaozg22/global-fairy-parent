@@ -29,6 +29,12 @@
 			<version>3.2.7</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.jzg.fairy.core</groupId>
+			<artifactId>global-fairy-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<!-- mybatis/spring包 -->
 		<dependency>
 			<groupId>org.mybatis</groupId>

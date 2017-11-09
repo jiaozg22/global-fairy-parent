@@ -30,7 +30,7 @@
 		<selectKey keyProperty="id" resultType="int" order="BEFORE">
 			select if(max(id) is null ,1,max(id) + 2) as newId from user_info
 		</selectKey>
-		insert into user_info(username) values(#{username})
+		insert into user_info(username,password) values(#{username},#{password})
 	</insert>
 
 	<!-- 删除语句 -->

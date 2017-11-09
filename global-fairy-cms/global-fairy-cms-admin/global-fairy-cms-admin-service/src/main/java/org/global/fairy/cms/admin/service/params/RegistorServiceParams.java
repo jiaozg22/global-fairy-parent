@@ -13,14 +13,7 @@ public class RegistorServiceParams implements Serializable{
 
 	private String password;
 
-	public String getName() {
-		return username;
-	}
-
-	public void setName(String name) {
-		this.username = name;
-	}
-
+	
 	public String getPassword() {
 		return password;
 	}
@@ -32,10 +25,18 @@ public class RegistorServiceParams implements Serializable{
 	public RegistorServiceParams() {
 	}
 
-	public RegistorServiceParams(String name, String password) {
+	public RegistorServiceParams(String username, String password) {
 		super();
-		this.username = name;
+		this.setUsername(username);
 		this.password = password;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 }

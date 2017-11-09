@@ -27,28 +27,23 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.1.6.RELEASE</version>
 		</dependency>
-		<!-- 
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc-portlet</artifactId>
+			<artifactId>spring-aop</artifactId>
 			<version>4.1.6.RELEASE</version>
-		</dependency> -->
-		<!-- <dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-struts</artifactId>
-			<version>4.1.6.RELEASE</version>
-		</dependency> -->
-		<!-- <dependency>
-			<groupId>org.springframework.webflow</groupId>
-			<artifactId>spring-webflow</artifactId>
-			<version>2.3.1.RELEASE</version>
-		</dependency> -->
+		</dependency>
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-webmvc-portlet</artifactId> 
+			<version>4.1.6.RELEASE</version> </dependency> -->
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-struts</artifactId> 
+			<version>4.1.6.RELEASE</version> </dependency> -->
+		<!-- <dependency> <groupId>org.springframework.webflow</groupId> <artifactId>spring-webflow</artifactId> 
+			<version>2.3.1.RELEASE</version> </dependency> -->
 		<dependency>
 			<groupId>org.springframework.webflow</groupId>
 			<artifactId>spring-js-resources</artifactId>
 			<version>2.3.1.RELEASE</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -104,7 +99,7 @@
 			<version>4.0.0.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>ognl</groupId>
 			<artifactId>ognl</artifactId>
@@ -122,7 +117,7 @@
 			<artifactId>global-fairy-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
+
 	</dependencies>
 	<build>
 		<finalName>global-fairy-web</finalName>

@@ -36,22 +36,17 @@ public class UserController {
 	@RequestMapping(value = "/registor", method = RequestMethod.POST)
 	@ResponseBody()
 	public String registor(@RequestBody RegistorForm registorForm) {
-		System.out.println(registorForm.toString());
-		
-		logger.info(  "注册...");
+		logger.debug("注册...");
 		RegistorApiParams registorApiParams = RegistorForm2RegistorApiParams
 				.getInstance().convert(registorForm);
 		userApi.register(registorApiParams);
-		logger.info("注册成功!");
+		logger.debug("注册成功!");
 		RegistorApiParams registorApiResult = new RegistorApiParams();
-		registorApiResult.setUsername("jiao");
-		registorApiResult.setPassword("123456");
-		String json = "/\"total/\":2,/\"rows/\""
-				+ "{/\"username/\":/\"jiao_zg/\",/\"password/\":/\"123456/\"},"
-				+ "{/\"username/\":/\"jiao_zg/\",/\"password/\":/\"123456/\"}";
+		registorApiResult.setUsername(registorApiParams.getUsername());
+		registorApiResult.setPassword(registorApiParams.getPassword());
 		return JSONObject.toJSONString(registorApiResult);
 	}
-	
+
 	/**
 	 * 新增用戶
 	 * 
@@ -61,15 +56,17 @@ public class UserController {
 	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
 	@ResponseBody()
 	public String addUser(@RequestBody RegistorForm registorForm) {
-		logger.info(  "新增用户...");
+		logger.info("新增用户...");
 		RegistorApiParams registorApiParams = RegistorForm2RegistorApiParams
 				.getInstance().convert(registorForm);
-		String result = ResultJsonUtil.toJson(userApi.addUser(registorApiParams));
-		
+		String result = ResultJsonUtil.toJson(userApi
+				.addUser(registorApiParams));
+
 		logger.info("新增用户成功!");
+
 		return result;
 	}
-	
+
 	/**
 	 * 列表查询接口
 	 * 
@@ -80,9 +77,10 @@ public class UserController {
 	@ResponseBody()
 	public String userList(PageParams pagerForm) {
 		System.out.println(pagerForm.toString());
-		logger.info(  "用户列表...");
-		
+		logger.info("用户列表...");
+
 		String result = userApi.list(pagerForm);
 		return result;
 	}
+
 }
