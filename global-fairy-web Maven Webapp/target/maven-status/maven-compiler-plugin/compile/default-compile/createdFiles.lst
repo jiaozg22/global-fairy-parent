@@ -1,1 +1,2 @@
 org\global\fairy\web\HelloWorld.class
+org\global\fairy\web\interceptors\TimeInterceptor.class

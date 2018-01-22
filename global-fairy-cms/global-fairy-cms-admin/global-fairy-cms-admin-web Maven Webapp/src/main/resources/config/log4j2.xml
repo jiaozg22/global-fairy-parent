@@ -21,7 +21,7 @@
 		</RollingRandomAccessFile>
 	</Appenders>
 	<Loggers>
-		<Logger name="com.cnblogs.yjmyzz.App2" level="trace"
+		<Logger name="org.global.fairy" level="info"
 			additivity="true">
 			<AppenderRef ref="running-log" />
 		</Logger>
