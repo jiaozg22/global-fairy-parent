@@ -28,5 +28,10 @@
 			<artifactId>global-fairy-cms-admin-service</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>org.global.fairy.cms.admin.dao</groupId>
+			<artifactId>global-fairy-cms-admin-dao</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>

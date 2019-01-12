@@ -8,7 +8,7 @@ import org.global.fairy.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("userService")
+@Service("userServiceT")
 public class UserServiceImpl implements IUserService{
 	private static final Logger logger = LogManager.getLogger();
 	

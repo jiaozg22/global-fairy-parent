@@ -13,6 +13,9 @@
         <dependent-module archiveName="global-fairy-core-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/global-fairy-core/global-fairy-core">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="global-fairy-security-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/global-fairy-security/global-fairy-security">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="global-fairy-cms-admin-web"/>
         <property name="java-output-path" value="/global-fairy-cms-admin-web Maven Webapp/target/classes"/>
     </wb-module>

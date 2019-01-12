@@ -1,3 +1,8 @@
 org\global\fairy\dao\UserMapper.class
+org\global\fairy\dao\params\WherePrams.class
+org\global\fairy\dao\beans\Po.class
+org\global\fairy\dao\params\Pram.class
+org\global\fairy\dao\CommonDao.class
+org\global\fairy\dao\interceptor\PagingPlugin.class
 org\global\fairy\dao\App.class
-org\global\fairy\dao\PagingPlugin.class
+org\global\fairy\dao\GenericsUtils.class

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>org.jzg.fairy</groupId>
 	<artifactId>global-fairy-activemq</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	
 	<name>global-fairy-activemq</name>
 	<url>http://maven.apache.org</url>
 	<properties>
@@ -18,11 +18,11 @@
 	</properties>
 	<dependencies>
 		<!-- activemq 相关maven依赖 -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>javax.jms</groupId>
 			<artifactId>jms</artifactId>
 			<version>1.1</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-core</artifactId>

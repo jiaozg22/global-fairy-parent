@@ -5,6 +5,10 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="User" type = "org.global.fairy.modules.dao.User"/>
+		<typeAlias alias="pageParams" type = "org.global.fairy.modules.PageParams"/>
 	</typeAliases>
 	
+	<plugins>
+        <plugin interceptor="org.global.fairy.dao.interceptor.PagingPlugin"/>
+    </plugins>
 </configuration>

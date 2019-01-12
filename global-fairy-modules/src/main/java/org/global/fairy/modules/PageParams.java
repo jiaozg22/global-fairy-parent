@@ -1,6 +1,14 @@
 package org.global.fairy.modules;
 
-public class PageParams {
+import java.io.Serializable;
+
+public class PageParams implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private Integer page;// 当前页码数
 	private Integer pageSize;// 每页条数
 	private Boolean useFlag;// 是否启用插件
